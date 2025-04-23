@@ -827,42 +827,6 @@ export interface ApiAboutUsAboutUs extends Schema.SingleType {
   };
 }
 
-export interface ApiAminAmin extends Schema.SingleType {
-  collectionName: 'amins';
-  info: {
-    singularName: 'amin';
-    pluralName: 'amins';
-    displayName: 'amin';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    dz: Attribute.DynamicZone<
-      [
-        'c4d-components.accordions',
-        'c4d-components.carousel-paragraph-icons',
-        'c4d-components.carousel-slide',
-        'c4d-components.carousel-type-linear',
-        'c4d-components.contact-form',
-        'c4d-components.ellipse',
-        'c4d-components.footer',
-        'c4d-components.paragraph',
-        'c4d-components.slider-profile-cards',
-        'c4d-components.vertical-space'
-      ]
-    >;
-    page: Attribute.Relation<'api::amin.amin', 'oneToOne', 'api::page.page'>;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<'api::amin.amin', 'oneToOne', 'admin::user'> &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<'api::amin.amin', 'oneToOne', 'admin::user'> &
-      Attribute.Private;
-  };
-}
-
 export interface ApiContactContact extends Schema.SingleType {
   collectionName: 'contacts';
   info: {
@@ -1192,7 +1156,6 @@ declare module '@strapi/types' {
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'api::about-us.about-us': ApiAboutUsAboutUs;
-      'api::amin.amin': ApiAminAmin;
       'api::contact.contact': ApiContactContact;
       'api::contact-form.contact-form': ApiContactFormContactForm;
       'api::footer.footer': ApiFooterFooter;
