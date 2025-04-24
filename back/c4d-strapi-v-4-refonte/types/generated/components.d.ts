@@ -44,6 +44,35 @@ export interface C4DComponentsCarouselParagraphIcons extends Schema.Component {
   };
 }
 
+export interface C4DComponentsCarouselSlideJobOffres extends Schema.Component {
+  collectionName: 'components_c4d_components_carousel_slide_job_offres';
+  info: {
+    displayName: 'carousel slide job offres';
+    icon: 'bulletList';
+    description: '';
+  };
+  attributes: {
+    inputBackgroundColor: Attribute.String &
+      Attribute.CustomField<'plugin::color-picker.color'>;
+    outputBadgeColor: Attribute.String &
+      Attribute.CustomField<'plugin::color-picker.color'>;
+    cardOpacity: Attribute.Integer;
+    title: Attribute.String;
+    titleColor: Attribute.String &
+      Attribute.CustomField<'plugin::color-picker.color'>;
+    jobTitleColor: Attribute.String &
+      Attribute.CustomField<'plugin::color-picker.color'>;
+    jobDescriptionColor: Attribute.String &
+      Attribute.CustomField<'plugin::color-picker.color'>;
+    jobHighlightedColor: Attribute.String &
+      Attribute.CustomField<'plugin::color-picker.color'>;
+    jobBadgeColor: Attribute.String &
+      Attribute.CustomField<'plugin::color-picker.color'>;
+    jobBadgeBackgroundColor: Attribute.String &
+      Attribute.CustomField<'plugin::color-picker.color'>;
+  };
+}
+
 export interface C4DComponentsCarouselSlide extends Schema.Component {
   collectionName: 'components_c4d_components_carousel_slides';
   info: {
@@ -134,7 +163,55 @@ export interface C4DComponentsContactForm extends Schema.Component {
       Attribute.CustomField<'plugin::color-picker.color'>;
     popupBorderColor: Attribute.String &
       Attribute.CustomField<'plugin::color-picker.color'>;
-    cv: Attribute.Media;
+  };
+}
+
+export interface C4DComponentsContactJobForm extends Schema.Component {
+  collectionName: 'components_c4d_components_contact_job_forms';
+  info: {
+    displayName: 'ContactJobForm';
+    icon: 'bulletList';
+  };
+  attributes: {
+    inputFormBackgroundColor: Attribute.String &
+      Attribute.CustomField<'plugin::color-picker.color'>;
+    outputFormBackgroundColor: Attribute.String &
+      Attribute.CustomField<'plugin::color-picker.color'>;
+    enableTransparentForm: Attribute.Boolean;
+    carouselTitle: Attribute.String;
+    carouselTitleColor: Attribute.String &
+      Attribute.CustomField<'plugin::color-picker.color'>;
+    hasCarouselText: Attribute.Boolean;
+    carouselText: Attribute.String;
+    carouselTextColor: Attribute.String &
+      Attribute.CustomField<'plugin::color-picker.color'>;
+    hasCarouselButton: Attribute.Boolean;
+    carouselButtonText: Attribute.String;
+    carouselButtonLink: Attribute.String;
+    carouselImgSrc: Attribute.Media;
+    formTextColor: Attribute.String &
+      Attribute.CustomField<'plugin::color-picker.color'>;
+    fieldsBackgroundColor: Attribute.String &
+      Attribute.CustomField<'plugin::color-picker.color'>;
+    fieldsBorderColor: Attribute.String &
+      Attribute.CustomField<'plugin::color-picker.color'>;
+    fieldsHilightedBorderColor: Attribute.String &
+      Attribute.CustomField<'plugin::color-picker.color'>;
+    formButtonText: Attribute.String;
+    formSectionTitleColor: Attribute.String;
+    formParagraphColor: Attribute.String &
+      Attribute.CustomField<'plugin::color-picker.color'>;
+    checkboxBackgroundColor: Attribute.String &
+      Attribute.CustomField<'plugin::color-picker.color'>;
+    checkboxBorderColor: Attribute.String &
+      Attribute.CustomField<'plugin::color-picker.color'>;
+    checkBoxTextColor: Attribute.String &
+      Attribute.CustomField<'plugin::color-picker.color'>;
+    textPopup: Attribute.String;
+    textColorPopup: Attribute.String &
+      Attribute.CustomField<'plugin::color-picker.color'>;
+    popupBorderColor: Attribute.String &
+      Attribute.CustomField<'plugin::color-picker.color'>;
   };
 }
 
@@ -383,9 +460,11 @@ declare module '@strapi/types' {
     export interface Components {
       'c4d-components.accordions': C4DComponentsAccordions;
       'c4d-components.carousel-paragraph-icons': C4DComponentsCarouselParagraphIcons;
+      'c4d-components.carousel-slide-job-offres': C4DComponentsCarouselSlideJobOffres;
       'c4d-components.carousel-slide': C4DComponentsCarouselSlide;
       'c4d-components.carousel-type-linear': C4DComponentsCarouselTypeLinear;
       'c4d-components.contact-form': C4DComponentsContactForm;
+      'c4d-components.contact-job-form': C4DComponentsContactJobForm;
       'c4d-components.ellipse': C4DComponentsEllipse;
       'c4d-components.footer': C4DComponentsFooter;
       'c4d-components.paragraph': C4DComponentsParagraph;
